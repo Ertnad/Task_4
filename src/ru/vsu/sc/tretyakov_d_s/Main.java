@@ -1,3 +1,5 @@
+package ru.vsu.sc.tretyakov_d_s;
+
 import java.util.Scanner;
 
 public class Main {
