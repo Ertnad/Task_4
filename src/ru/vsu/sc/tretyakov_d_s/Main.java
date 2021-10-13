@@ -6,52 +6,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double n = readNumber();
-        double sum = calculateSumOfSequence(n);
-        printResult(sum);
+        double sizeOfSequence = readNumber();
+        double x1 = 1;
+        double x2 = 0.3;
+        double sum = calculateSumOfSequence(sizeOfSequence, x1, x2);
+        printResult(sum, x1, x2);
     }
 
     private static double readNumber() {
-        System.out.print("Enter the value of n - ");
+        System.out.print("Enter the size of the numeric sequence - ");
 
         Scanner scn = new Scanner(System.in);
         double value = scn.nextDouble();
 
-        if (value <= 0) {
-            System.out.println("n can be only more than 0");
+        if (value <= 2) {
+            System.out.println("Sequence can be only more than 2");
             System.exit(1);
         }
 
         return value;
     }
 
-    private static double getFactorial(double n) {
-        double result = 1;
-        for (double i = 1; i <= n; i++) {
-            result = result * i;
-        }
-        return result;
-    }
 
-    private static double pow(double index) {
-        double result = 1;
-        for (int i = 0; i < index; i++) {
-            result *= -1;
-        }
-        return result;
-    }
-
-    private static double calculateSumOfSequence(double n) {
+    private static double calculateSumOfSequence(double sizeOfSequence, double x1, double x2) {
         double sum = 0;
-        for (double i = 1; i <= n; i++) {
-            double numerator = pow(i) * (i + 1); // числитель
-            double denominator = getFactorial(n); // знаменатель
-            sum += numerator/denominator ;
+        for (double i = 3; i <= sizeOfSequence; i++) {
+            double xi = (i+1) * x1;
+            x1 = x2;
+            x2 = xi;
+            sum += xi  ;
         }
         return sum;
     }
 
-    private static void printResult(double sum){
+    private static void printResult(double sum, double x1, double x2){
+        sum = sum + x1 + x2;
         System.out.printf("The result of adding a sequence = %s", sum);
     }
 }
