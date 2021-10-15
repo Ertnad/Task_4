@@ -10,7 +10,7 @@ public class Main {
         double x1 = 1;
         double x2 = 0.3;
         double sum = calculateSumOfSequence(sizeOfSequence, x1, x2);
-        printResult(sum, x1, x2);
+        printResult(sum);
     }
 
     private static double readNumber() {
@@ -27,9 +27,8 @@ public class Main {
         return value;
     }
 
-
     private static double calculateSumOfSequence(double sizeOfSequence, double x1, double x2) {
-        double sum = 0;
+        double sum = x1 + x2;
         for (double i = 3; i <= sizeOfSequence; i++) {
             double xi = (i+1) * x1;
             x1 = x2;
@@ -39,8 +38,7 @@ public class Main {
         return sum;
     }
 
-    private static void printResult(double sum, double x1, double x2){
-        sum = sum + x1 + x2;
+    private static void printResult(double sum) {
         System.out.printf("The result of adding a sequence = %s", sum);
     }
 }
