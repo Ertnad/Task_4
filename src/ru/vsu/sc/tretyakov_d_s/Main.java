@@ -18,14 +18,8 @@ public class Main {
         System.out.print("Enter the size of the numeric sequence - ");
 
         Scanner scn = new Scanner(System.in);
-        double value = scn.nextDouble();
 
-        if (value <= 2) {
-            System.out.println("Sequence can be only more than 2");
-            System.exit(1);
-        }
-
-        return value;
+        return scn.nextDouble();
     }
 
     private static double calculateSumOfSequence(double sizeOfSequence) {
