@@ -8,8 +8,10 @@ public class Main {
 
         double sizeOfSequence = readNumber();
 
-        double sum = calculateSumOfSequence(sizeOfSequence);
-        printResult(sum);
+        if (sizeOfSequence > 2) {
+            double sum = calculateSumOfSequence(sizeOfSequence);
+            printResult(sum);
+        }
     }
 
     private static double readNumber() {
