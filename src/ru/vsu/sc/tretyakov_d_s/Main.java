@@ -7,9 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         double sizeOfSequence = readNumber();
-        double x1 = 1;
-        double x2 = 0.3;
-        double sum = calculateSumOfSequence(sizeOfSequence, x1, x2);
+
+        double sum = calculateSumOfSequence(sizeOfSequence);
         printResult(sum);
     }
 
@@ -27,7 +26,9 @@ public class Main {
         return value;
     }
 
-    private static double calculateSumOfSequence(double sizeOfSequence, double x1, double x2) {
+    private static double calculateSumOfSequence(double sizeOfSequence) {
+        double x1 = 1;
+        double x2 = 0.3;
         double sum = x1 + x2;
         for (double i = 3; i <= sizeOfSequence; i++) {
             double xi = (i+1) * x1;
